@@ -1353,7 +1353,7 @@
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           navLinksArray.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === #${sectionId}) {
+            if (link.getAttribute('href') === '#' + sectionId) {
               link.classList.add('active');
             }
           });
@@ -1518,7 +1518,7 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.transitionDelay = ${Array.from(entry.target.parentNode.children).indexOf(entry.target) * 0.1}s;
+          entry.target.style.transitionDelay = (Array.from(entry.target.parentNode.children).indexOf(entry.target) * 0.1) + 's';
           entry.target.classList.add('active');
         }
       });
